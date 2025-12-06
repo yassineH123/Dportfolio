@@ -44,12 +44,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-photo {
-width: 100%;
-height: 100%;
-object-fit: cover;
-object-position: center top;
-border-radius: 50%;
-border: 8px solid var(--accent);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 8px solid var(--accent);
 }
 
 h1 {
@@ -62,189 +62,94 @@ h1 {
 }
 
 .subtitle {
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 1rem 0 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
 }
 
-.contact-header p {
-  margin: 0.8rem 0;
-  font-size: 1.1rem;
-}
-
-.contact-header a { color: #E8C7E8; text-decoration: underline; }
-
+/* ============= BOUTONS UNIFORMES ============= */
 .btn {
   display: inline-block;
-  padding: 16px 48px;
   background: var(--primary);
   color: white;
-  border-radius: 50px;
+  padding: 18px 60px;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-top: 2rem;
-  transition: all 0.4s;
-  box-shadow: 0 10px 30px rgba(216,27,96,0.4);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(216, 27, 96, 0.3);
 }
 
 .btn:hover {
-  transform: translateY(-8px);
-  background: #C2185B;
-  box-shadow: 0 20px 40px rgba(216,27,96,0.5);
+  background: #c2185b;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(216, 27, 96, 0.4);
 }
 
-/* ============= SECTIONS ============= */
+.btn.download-btn {
+  display: block;
+  width: fit-content;
+  margin: 3rem auto 1rem;
+  padding: 20px 70px;
+  font-size: 1.8rem;
+}
+
+/* ============= SECTIONS GÉNÉRALES ============= */
 .section {
-  padding: 130px 5%;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 1s ease-out;
+  padding: 120px 8%;
+  text-align: center;
 }
-
-.section.visible { opacity: 1; transform: translateY(0); }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 }
 
-h2 {
-  font-size: 4.2rem;
-  margin-bottom: 4rem;
-  color: var(--text);
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
 
-/* ============= BIO ============= */
-.bio-text {
-  font-size: 1.35rem;
-  max-width: 900px;
-  margin: 0 auto;
-  color: var(--gray);
-  line-height: 2;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ============= SKILLS ============= */
-.skills-section { 
-  background: var(--light); 
-  border-radius: 30px; 
-  margin: 60px auto; 
-  padding: 60px 5%;
-}
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  text-align: left;
-}
-.skill-card h3 {
-  font-size: 1.6rem;
-  color: var(--primary);
-  margin-bottom: 1.5rem;
-  border-bottom: 3px solid var(--accent);
-  padding-bottom: 0.5rem;
-}
-.skill-card ul { list-style: none; }
-.skill-card li {
-  margin: 1rem 0;
-  padding-left: 30px;
-  position: relative;
-  font-size: 1.1rem;
-}
-.skill-card li::before {
-  content: "◆";
-  color: var(--primary);
-  position: absolute;
-  left: 0;
-  font-size: 1.3rem;
-}
-
-/* ============= CV & AWARDS ============= */
-.cv-section, 
-#awards {
-  background: var(--light);
-  border-radius: 30px;
-  margin: 60px auto;
-  padding: 60px 5%;
-}
-
+/* ============= IFRAME CV – AFFICHAGE PARFAIT ============= */
 .cv-wrapper {
-  background: white;
+  max-width: 900px;
+  margin: 3rem auto;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-  margin-bottom: 3rem;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
 }
 
 .cv-iframe {
   width: 100%;
-  height: 1100px;
+  height: 1000px;
   border: none;
+  border-radius: 20px;
 }
 
-/* Spécifique pour les certificats (plus petits) */
-#awards .cv-iframe {
-  height: 700px; /* ajusté pour les certificats plus courts */
+/* ============= IMAGES CERTIFICATS ============= */
+.magazine-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  border: 3px solid var(--accent);
+  margin: 2.5rem auto;
+  display: block;
 }
 
-/* Texte du prix (en gras et mis en valeur) */
-#awards > .container > p {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--primary);
-  max-width: 900px;
-  margin: 2rem auto 4rem;
-  line-height: 1.8;
-  padding: 1.5rem;
-  background: rgba(232, 199, 232, 0.3);
-  border-left: 6px solid var(--primary);
-  border-radius: 0 12px 12px 0;
-}
-
-/* Titres dans la section prix */
-#awards h3 {
-  font-size: 2rem;
-  margin: 4rem 0 2rem;
-  color: var(--primary);
-}
-
-/* Liste des awards pour matcher le style des skills */
-.award-list {
-  list-style: none;
-  text-align: left;
-  max-width: 900px;
-  margin: 0 auto 2rem;
-}
-
-.award-list li {
-  margin: 1rem 0;
-  padding-left: 30px;
-  position: relative;
-  font-size: 1.1rem;
-}
-
-.award-list li::before {
-  content: "◆";
-  color: var(--primary);
-  position: absolute;
-  left: 0;
-  font-size: 1.3rem;
-}
-
-/* Magazine images grid */
 .magazine-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-}
-
-.magazine-img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  border: 2px solid var(--accent);
+  margin: 3rem 0;
 }
 
 /* ============= CONTACT ============= */
@@ -252,7 +157,8 @@ h2 {
   font-size: 1.4rem;
   margin: 1.5rem 0;
 }
-.contact-grid a { color: var(--primary); }
+.contact-grid a { color: var(--primary); font-weight: 600; }
+
 .qr-code img {
   width: 180px;
   margin-top: 3rem;
@@ -274,6 +180,7 @@ footer {
 @media (max-width: 968px) {
   h1 { font-size: 5rem; }
   .hero-circle { width: 240px; height: 240px; }
+  .btn.download-btn { padding: 18px 50px; font-size: 1.6rem; }
 }
 
 @media (max-width: 768px) {
@@ -281,11 +188,6 @@ footer {
   h2 { font-size: 3.2rem; }
   .hero-circle { width: 200px; height: 200px; }
   .section { padding: 90px 5%; }
-  .cv-iframe { height: 900px; }
-  #awards .cv-iframe { height: 600px; }
-  
-  #awards > .container > p {
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
+  .cv-iframe { height: 800px; }
+  .magazine-img { border-radius: 15px; }
 }
